@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: test@123
+    ports:
+      - "3306:3306"
+  activemq:
+    image: apache/activemq-artemis:latest-alpine
+    environment:
+      ARTEMIS_USER: artemis
+      ARTEMIS_PASSWORD: test@123
+    ports:
+      - "61616:61616"
+      - "8161:8161"
